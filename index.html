@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ionic Patrimoine | Planification financière</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="favicon.png" alt="Ionic Patrimoine" height="40" class="me-2">
+                <span>Ionic Patrimoine</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">À propos de nous</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mission" data-i18n="nav.mission">Vision Mission Valeurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav.services">Nos services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contactez-nous</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Plus</a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="https://www.micasf.com/services/epargne-et-investissement" target="_blank">Gestion de Patrimoine</a></li>
+                            <li><a class="dropdown-item" href="https://www.micasf.com/services/assurances" target="_blank">Protections</a></li>
+                            <li><a class="dropdown-item" href="https://portailmica.com/login" target="_blank">Accès client</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="https://calendly.com/marc-ionicpatrimoine" target="_blank" class="btn btn-primary ms-lg-3" data-i18n="nav.book">Rendez-vous</a>
+                <button class="btn btn-outline-light ms-2" id="langToggle" title="Changer de langue">
+                    <i class="bi bi-translate"></i> <span id="langLabel">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold mb-4" data-i18n="hero.title">Votre équilibre. Votre avenir. Votre héritage.</h1>
+            <p class="lead mb-4" data-i18n="hero.subtitle">Planification financière indépendante et stratégique pour familles, professionnels et entrepreneurs.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#booking" class="btn btn-primary btn-lg">
+                    <i class="bi bi-calendar-check me-2"></i><span data-i18n="hero.bookBtn">Prendre rendez-vous</span>
+                </a>
+                <a href="#services" class="btn btn-outline-light btn-lg">
+                    <span data-i18n="hero.servicesBtn">Nos services</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://static.wixstatic.com/media/725b68_85802c94d5954fe793203dcd8a6f729b~mv2.jpg/v1/fill/w_399,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/725b68_85802c94d5954fe793203dcd8a6f729b~mv2.jpg" alt="Marc-Olivier Poulin" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4" data-i18n="about.title">À propos de nous</h2>
+                    <h3 class="text-primary mb-3">Marc-Olivier Poulin, Pl Fin, CR®</h3>
+                    <p class="text-muted" data-i18n="about.subtitle">Planificateur financier – Fondateur</p>
+                    <p data-i18n="about.desc1">Marc-Olivier Poulin est planificateur financier et fondateur de Ionic Patrimoine inc., un cabinet indépendant spécialisé dans l'accompagnement stratégique des familles, des professionnels et des entrepreneurs dans la gestion et structuration de leur patrimoine.</p>
+                    <p data-i18n="about.desc2">Issu de l'Université Laval et de l'Institut de Planification Financière (CIFP), il a développé la rigueur analytique qui guide sa pratique professionnelle. Il a accompagné des centaines de clients dans les décisions financières les plus importantes de leur vie.</p>
+                    <p data-i18n="about.desc3">Avant de fonder Ionic Patrimoine inc., il a évolué au sein de services spécialisés de grandes institutions financières canadiennes, développant une compréhension approfondie des enjeux financiers des clientèles exigeantes.</p>
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title mb-3" data-i18n="about.mica.title">Un réseau de spécialistes</h5>
+                                    <img src="https://static.wixstatic.com/media/725b68_76378c74aed24fa8ae63110a914445e4~mv2.png/v1/fill/w_186,h_141,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/725b68_76378c74aed24fa8ae63110a914445e4~mv2.png" alt="MICA Capital" class="img-fluid mb-3" style="max-height: 100px;">
+                                    <p class="card-text" data-i18n="about.mica.desc">En tant que professionnel affilié à MICA Capital, j'ai accès à un réseau de haut niveau de spécialistes pour offrir à mes clients des solutions personnalisées et indépendantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title mb-3" data-i18n="about.clientAccess.title">Accès Client</h5>
+                                    <i class="bi bi-person-circle display-4 text-primary mb-3"></i>
+                                    <p class="card-text" data-i18n="about.clientAccess.desc">Accédez à votre espace client pour consulter vos documents et suivre l'évolution de votre patrimoine.</p>
+                                    <a href="https://portailmica.com/login" target="_blank" class="btn btn-primary" data-i18n="about.clientAccess.btn">Portail Client</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Ionic Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <img src="pillar-icon.svg" alt="Colonne Ionique" height="64" class="mb-4">
+                <h2 data-i18n="why.title">Pourquoi la colonne ionique grecque est-elle au cœur de notre image ?</h2>
+                <p class="lead" data-i18n="why.subtitle">Comme une colonne soutient une structure, nous sommes un pilier stable et discret dans la vie financière de nos clients.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <div class="p-4">
+                        <i class="bi bi-person-check display-4 text-primary mb-3"></i>
+                        <h4 data-i18n="why.equilibre.title">Équilibre</h4>
+                        <p data-i18n="why.equilibre.desc">Notre approche est fondée sur l'équilibre, la rigueur et l'humanité. Chaque plan est bâti avec soin, pour aujourd'hui mais aussi pour demain.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4">
+                        <i class="bi bi-hourglass-split display-4 text-primary mb-3"></i>
+                        <h4 data-i18n="why.perennite.title">Pérennité</h4>
+                        <p data-i18n="why.perennite.desc">Inspirée de l'architecture grecque classique, la colonne symbolise la pérennité. La sagesse, la structure et la durabilité ne se démodent jamais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4">
+                        <i class="bi bi-shield-check display-4 text-primary mb-3"></i>
+                        <h4 data-i18n="why.confiance.title">Confiance</h4>
+                        <p data-i18n="why.confiance.desc">Bâtir, protéger et transmettre un patrimoine qui résiste au temps. Nous sommes avec vous, pour vous, et pour les générations à venir.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p class="lead">Inspirée de l'architecture grecque classique, la colonne symbolise la pérennité. Elle nous rappelle que la sagesse, la structure et la durabilité ne se démodent jamais. Elle reflète notre vision : bâtir, protéger et transmettre un patrimoine qui résiste au temps.</p>
+                <p class="lead fw-bold text-primary">Chez Ionic Patrimoine, nous bâtissons avec vous, pour vous, et pour les générations à venir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section id="mission" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="mission.title">Notre Mission, Vision & Valeurs</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-bullseye display-4 text-primary mb-3"></i>
+                            <h4 data-i18n="mission.mission.title">Notre Mission</h4>
+                            <p data-i18n="mission.mission.desc">Accompagner nos clients dans toutes les étapes clés de leur vie financière. Nous aidons à bâtir, protéger et transmettre leur patrimoine grâce à une approche personnalisée et efficace.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-eye display-4 text-primary mb-3"></i>
+                            <h4 data-i18n="mission.vision.title">Notre Vision</h4>
+                            <p data-i18n="mission.vision.desc">Être une référence incontournable en planification financière et en gestion de patrimoine durable au Québec, en alliant expertise, intégrité et accessibilité.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-gem display-4 text-primary mb-3"></i>
+                            <h4 data-i18n="mission.valeurs.title">Nos Valeurs</h4>
+                            <ul class="text-start small">
+                                <li data-i18n="mission.valeurs.eq">Équilibre</li>
+                                <li data-i18n="mission.valeurs.per">Pérennité</li>
+                                <li data-i18n="mission.valeurs.transp">Transparence</li>
+                                <li data-i18n="mission.valeurs.indep">Indépendance</li>
+                                <li data-i18n="mission.valeurs.prox">Proximité humaine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="services.title">Nos Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <i class="bi bi-graph-up-arrow display-5 text-primary mb-3"></i>
+                            <h4 data-i18n="services.invest.title">Épargne & Investissements</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="services.invest.1">Fonds négociés en bourse</span></li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="services.invest.2">Mandat de gestion privée</span></li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="services.invest.3">Fonds communs de placement</span></li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="services.invest.4">Fonds alternatifs liquides</span></li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="services.invest.5">Fonds distincts & rentes viagères</span></li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i><span data-i18n="services.invest.6">Certificats de placement garanti</span></li>
+                            </ul>
+                            <p class="mt-3 mb-0" data-i18n="services.invest.footer">Nous concevons des stratégies alignées sur vos objectifs, votre horizon et votre tolérance au risque.</p>
+                            <p class="mt-3 small text-muted fst-italic" data-i18n="services.invest.disclaimer">Les recommandations de placement, y compris celles portant sur les fonds listés précédemment, sont effectuées par l'entremise de MICA Capital inc., cabinet de services financiers dûment inscrit auprès des autorités réglementaires.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <i class="bi bi-calculator display-5 text-primary mb-3"></i>
+                            <h4 data-i18n="services.plan.title">Planification Financière</h4>
+                            <p data-i18n="services.plan.desc">Approche globale tenant compte de toutes les dimensions de votre situation. Nous vous aidons à clarifier vos objectifs, structurer vos finances et prendre des décisions éclairées.</p>
+                            <p class="mb-0" data-i18n="services.plan.footer">Élaboration de plans personnalisés, réalistes et durables. Toujours dans votre intérêt.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <i class="bi bi-shield-check display-4 text-primary mb-3"></i>
+                            <h4 data-i18n="services.protect.title">Protection du patrimoine</h4>
+                            <p data-i18n="services.protect.desc">Analyse rigoureuse des risques réels et solutions simples, ciblées et efficaces. Nous veillons à ce que votre patrimoine soit protégé de manière optimale.</p>
+                            <p class="mb-0" data-i18n="services.protect.footer">Sans complexité inutile ni multiplication de produits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4" data-i18n="booking.title">Prenez rendez-vous</h2>
+                    <p class="lead mb-4" data-i18n="booking.subtitle">Planifiez une consultation gratuite pour discuter de votre situation financière.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+                        <a href="https://calendly.com/marc-ionicpatrimoine" target="_blank" class="btn btn-primary btn-lg">
+                            <i class="bi bi-calendar-plus me-2"></i><span data-i18n="booking.btn">Réserver maintenant</span>
+                        </a>
+                        <a href="tel:1-418-957-3162" class="btn btn-outline-primary btn-lg">
+                            <i class="bi bi-telephone me-2"></i><span data-i18n="booking.call">Nous appeler</span>
+                        </a>
+                    </div>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/marc-ionicpatrimoine" style="min-width:320px;height:700px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="contact.title">Contactez-nous</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact.form.prenom">Prénom</label>
+                                    <input type="text" class="form-control" name="prenom" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact.form.nom">Nom de famille</label>
+                                    <input type="text" class="form-control" name="nom" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact.form.email">E-mail</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact.form.message">Message</label>
+                                    <textarea class="form-control" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100" data-i18n="contact.form.send">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4" data-i18n="contact.info.title">Informations de contact</h5>
+                            <div class="mb-3">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <a href="tel:1-418-957-3162">1-418-957-3162</a>
+                            </div>
+                            <div class="mb-3">
+                                <i class="bi bi-envelope text-primary me-2"></i>
+                                <a href="mailto:info@ionicpatrimoine.com">info@ionicpatrimoine.com</a>
+                            </div>
+                            <div class="mb-3">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <span>7900 Bd Pierre-Bertrand bureau 300, Québec, QC G2J 0C5</span>
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb-3" data-i18n="contact.social.title">Suivez-nous</h5>
+                                <a href="https://www.facebook.com/profile.php?id=61583619986274" class="btn btn-outline-secondary me-2" target="_blank">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/marc-olivier-poulin" class="btn btn-outline-secondary" target="_blank">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                            <div class="mt-4 p-3 bg-primary text-white rounded">
+                                <i class="bi bi-clock me-2"></i>
+                                <span data-i18n="contact.hours">Heures d'ouverture: Lun-Ven 9h-17h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Politique sur la protection des renseignements personnels</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted small">Mise-à-jour Juin 2025</p>
+                    <p><strong>Cette politique est celle de :</strong> Ionic Patrimoine inc. & Marc-Olivier Poulin</p>
+                    
+                    <h6>1. Contexte</h6>
+                    <p>Compte tenu que les entreprises doivent avoir et adapter leurs politiques et leurs pratiques en vue de se conformer aux obligations prévues en matière de confidentialité et de protection des renseignements personnels qu'elles recueillent, il est primordial d'établir une politique interne et des procédures pour la protection des renseignements personnels et ce, conformément à la Loi sur la protection des renseignements personnels dans le secteur privé, (LRQ. Chapitre P-39.1).</p>
+                    
+                    <h6>2. Définition</h6>
+                    <p>Il faut entendre par renseignement personnel, tout renseignement qui concerne une personne physique et qui permet de l'identifier, tant directement qu'indirectement. À titre d'exemples :</p>
+                    <ul>
+                        <li>Prénom et nom</li>
+                        <li>Âge</li>
+                        <li>Adresse de domicile</li>
+                        <li>Adresse électronique personnelle</li>
+                        <li>Situation financière (revenus, placements, assurances, actifs, passifs, etc.)</li>
+                        <li>Numéro d'assurance sociale</li>
+                        <li>Et autres...</li>
+                    </ul>
+                    
+                    <h6>3. Mise en œuvre de la politique</h6>
+                    <p>La mise en œuvre et l'application de cette politique a été confiée à Ionic Patrimoine inc. & Marc-Olivier Poulin qui est la personne responsable de la protection des renseignements personnels.</p>
+                    
+                    <h6>4. Consentement</h6>
+                    <p>Ionic Patrimoine inc. & Marc-Olivier Poulin s'engage à recueillir seulement les renseignements personnels d'un client qui sont nécessaires à la constitution de son dossier que dans la seule mesure où celui-ci aura donné un consentement. Pour être valide, le consentement d'une personne doit être : manifeste, libre, éclairé, spécifique et temporaire.</p>
+                    
+                    <h6>5. Renseignements personnels recueillis</h6>
+                    <p>Dans le but de pouvoir exécuter le mandat confié par les clients, voici les catégories de renseignements qui sont recueillis :</p>
+                    <ul>
+                        <li>Renseignements servant à identifier et à authentifier la personne</li>
+                        <li>Renseignements sur sa santé</li>
+                        <li>Renseignements sur ses dossiers d'assurance</li>
+                        <li>Renseignements financiers</li>
+                        <li>Renseignements d'emploi</li>
+                        <li>Renseignements sur ses produits et services utilisés</li>
+                    </ul>
+                    
+                    <h6>6. Utilisation et communication</h6>
+                    <p>Les renseignements personnels recueillis ne seront utilisés et communiqués qu'aux seules fins pour lesquelles ils auront été recueillis et dans le cours normal de nos affaires dans l'unique but d'exécuter le mandat qui nous est confié.</p>
+                    
+                    <h6>7. Conservation et sécurité</h6>
+                    <p>Nous conservons les renseignements personnels sous notre responsabilité sur le territoire du Québec ou au Canada. Nous nous engageons à mettre en place des mesures appropriées afin d'assurer la protection des renseignements personnels que nous conservons.</p>
+                    
+                    <h6>8. Vos droits</h6>
+                    <p><strong>Droit d'accès :</strong> Vous pouvez en tout temps accéder aux renseignements personnels que nous détenons à votre sujet.<br>
+                    <strong>Droit de rectification :</strong> Vous pouvez demander de modifier des renseignements inexacts ou incomplets.<br>
+                    <strong>Droit de suppression :</strong> Vous pouvez nous demander de supprimer vos renseignements personnels, sous réserve de nos obligations légales.</p>
+                    
+                    <h6>9. Incident de confidentialité</h6>
+                    <p>Si nous avons des motifs de croire qu'un incident de confidentialité impliquant un renseignement personnel s'est produit, nous devons prendre les mesures raisonnables pour diminuer les risques et aviser la Commission d'accès à l'information si un risque de préjudice sérieux est identifié.</p>
+                    
+                    <h6>10. Contact</h6>
+                    <p>Pour toute question concernant cette politique, contactez-nous à : <a href="mailto:info@ionicpatrimoine.com">info@ionicpatrimoine.com</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modal -->
+    <div class="modal fade" id="legalModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Politique du traitement des plaintes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Ionic Patrimoine inc.</strong><br>Résumé de notre politique de traitement des plaintes et de règlement des différends</p>
+                    
+                    <h6>Qu'est-ce qu'une plainte?</h6>
+                    <p>Une plainte exprime un reproche ou une insatisfaction à l'égard de nos services ou d'un produit que nous offrons et une attente de votre part que nous prenions des mesures pour y remédier.</p>
+                    
+                    <h6>Comment formuler une plainte?</h6>
+                    <p>Vous pouvez formuler votre plainte en communiquant avec nous par le moyen qui vous convient.</p>
+                    <p><strong>Pour nous joindre :</strong><br>
+                    Marc-Olivier Poulin<br>
+                    Téléphone : 418-957-3162<br>
+                    Courriel : <a href="mailto:marc@ionicpatrimoine.com">marc@ionicpatrimoine.com</a><br>
+                    Adresse : 7900, boulevard Pierre-Bertrand, bureau 300, Québec (Québec) G2J 0C5<br>
+                    Nos bureaux sont ouverts du lundi au vendredi de 8h à 20h.</p>
+                    
+                    <h6>Étapes du traitement d'une plainte</h6>
+                    <ol>
+                        <li><strong>Confirmation de réception :</strong> Nous vous envoyons un accusé de réception écrit dans un délai de 10 jours.</li>
+                        <li><strong>Analyse de la plainte :</strong> Nous nous assurons de bien comprendre votre plainte et vos attentes.</li>
+                        <li><strong>Réponse finale :</strong> Nous vous fournissons une réponse finale écrite dans un délai de 60 jours.</li>
+                    </ol>
+                    
+                    <h6>Traitement simplifié</h6>
+                    <p>Nous pouvons traiter certaines plaintes selon un processus simplifié pour lesquelles nous sommes en mesure d'offrir une solution satisfaisante dans un délai de 20 jours.</p>
+                    
+                    <h6>Examen par l'Autorité</h6>
+                    <p>Vous pouvez communiquer avec nous pour demander l'examen de votre dossier de plainte par l'Autorité des marchés financiers à tout moment si vous êtes insatisfait de la façon dont nous avons traité votre plainte.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Modal -->
+    <div class="modal fade" id="cookiesModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Politique relative aux témoins</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Cette politique explique comment Ionic Patrimoine inc. utilise les témoins (cookies) et autres technologies similaires lorsque vous utilisez notre site web.</p>
+                    
+                    <h6>Qu'est-ce qu'un témoin?</h6>
+                    <p>Un témoin est un petit fichier texte qui est stocké sur votre ordinateur ou votre appareil mobile lorsque vous.visiterez un site web. Les témoins nous permettent de mémoriser vos préférences et de comprendre comment vous interagissez avec notre site.</p>
+                    
+                    <h6>Types de témoins utilisés</h6>
+                    <ul>
+                        <li><strong>Témoins essentiels :</strong> Nécessaires au fonctionnement du site</li>
+                        <li><strong>Témoins de performance :</strong> Nous aident à comprendre comment les visiteurs utilisent le site</li>
+                        <li><strong>Témoins de fonctionnalité :</strong> Permettent de mémoriser vos préférences</li>
+                    </ul>
+                    
+                    <h6>Votre consentement</h6>
+                    <p>En continuant à utiliser notre site, vous consentez à l'utilisation de témoins conformément à cette politique.</p>
+                    
+                    <h6>Contact</h6>
+                    <p>Pour toute question, contactez-nous à : <a href="mailto:info@ionicpatrimoine.com">info@ionicpatrimoine.com</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img src="favicon.png" alt="Ionic Patrimoine" height="40" class="mb-3">
+                    <p data-i18n="footer.tagline">Votre partenaire pour bâtir, protéger et transmettre votre patrimoine.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-i18n="footer.links.title">Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-white-50" data-i18n="nav.about">À propos</a></li>
+                        <li><a href="#services" class="text-white-50" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#booking" class="text-white-50" data-i18n="nav.book">Rendez-vous</a></li>
+                        <li><a href="#contact" class="text-white-50" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-i18n="footer.legal.title">Légal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50" data-bs-toggle="modal" data-bs-target="#privacyModal" data-i18n="footer.legal.privacy">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-white-50" data-bs-toggle="modal" data-bs-target="#legalModal" data-i18n="footer.legal.terms">Mentions légales</a></li>
+                        <li><a href="#" class="text-white-50" data-bs-toggle="modal" data-bs-target="#cookiesModal" data-i18n="footer.legal.cookies">Politique de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Ionic Patrimoine inc. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="btn btn-primary back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="script.js"></script>
+</body>
+</html>
