@@ -1,0 +1,16 @@
+# IDE
+.idea/
+*.iml
+modules.xml
+vcs.xml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.zip
+original-logo.jpg
+
+# Logs
+*.log
