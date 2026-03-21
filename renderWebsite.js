@@ -982,8 +982,7 @@ function renderWebsite(containerId) {
             <section class="${PREFIX}py-5 ${PREFIX}bg-light">
                 <div class="${PREFIX}container">
                     <div class="${PREFIX}text-center ${PREFIX}mb-5">
-                        ${icons.pillar}
-                        <h2 class="${PREFIX}mt-4 ${PREFIX}text-primary" data-${PREFIX}i18n="why.title">Pourquoi la colonne ionique grecque est-elle au cœur de notre image ?</h2>
+                        <h2 class="${PREFIX}text-primary" data-${PREFIX}i18n="why.title">Pourquoi la colonne ionique grecque est-elle au cœur de notre image ?</h2>
                         <p class="${PREFIX}lead" data-${PREFIX}i18n="why.subtitle">Comme une colonne soutient une structure, nous sommes un pilier stable et discret dans la vie financière de nos clients.</p>
                     </div>
                     <div class="${PREFIX}row ${PREFIX}g-4">
