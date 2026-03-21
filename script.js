@@ -314,29 +314,7 @@ $(document).ready(function() {
         observer.observe(el);
     });
 
-    $('#contactForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = $(this).serialize();
-        
-        $(this).find('button').html('<span class="loader"></span>').prop('disabled', true);
-        
-        setTimeout(function() {
-            $('#contactForm')[0].reset();
-            $('#contactForm').find('button').html(translations[currentLang].contact.form.send).prop('disabled', false);
-            
-            const toast = $('<div class="toast-notification">' + (currentLang === 'fr' ? 'Merci pour votre envoi !' : 'Thank you for your message!') + '</div>');
-            $('body').append(toast);
-            toast.addClass('show');
-            
-            setTimeout(function() {
-                toast.removeClass('show');
-                setTimeout(function() {
-                    toast.remove();
-                }, 300);
-            }, 3000);
-        }, 1500);
-    });
+    // Contact form uses mailto action
 
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const sections = document.querySelectorAll('section');

@@ -1134,22 +1134,22 @@ function renderWebsite(containerId) {
                         <div class="${PREFIX}col-md-6">
                             <div class="${PREFIX}card ${PREFIX}border-0 ${PREFIX}shadow-sm ${PREFIX}h-100">
                                 <div class="${PREFIX}card-body">
-                                    <form id="${PREFIX}contactForm">
+                                    <form id="${PREFIX}contactForm" action="mailto:info@ionicpatrimoine.com" method="POST" enctype="text/plain">
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.prenom">Prénom</label>
-                                            <input type="text" class="${PREFIX}form-control" name="prenom" required>
+                                            <input type="text" class="${PREFIX}form-control" name="Prénom" required>
                                         </div>
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.nom">Nom de famille</label>
-                                            <input type="text" class="${PREFIX}form-control" name="nom" required>
+                                            <input type="text" class="${PREFIX}form-control" name="Nom" required>
                                         </div>
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.email">E-mail</label>
-                                            <input type="email" class="${PREFIX}form-control" name="email" required>
+                                            <input type="email" class="${PREFIX}form-control" name="Email" required>
                                         </div>
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.message">Message</label>
-                                            <textarea class="${PREFIX}form-control" name="message" rows="4" required></textarea>
+                                            <textarea class="${PREFIX}form-control" name="Message" rows="4" required></textarea>
                                         </div>
                                         <button type="submit" class="${PREFIX}btn ${PREFIX}btn-primary ${PREFIX}w-100" data-${PREFIX}i18n="contact.form.send">Envoyer</button>
                                     </form>
@@ -1372,29 +1372,7 @@ function renderWebsite(containerId) {
             });
         });
 
-        // Contact form
-        document.getElementById(`${PREFIX}contactForm`).addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            btn.disabled = true;
-            btn.textContent = '...';
-            
-            setTimeout(() => {
-                e.target.reset();
-                btn.disabled = false;
-                btn.textContent = t('contact.form.send');
-                
-                const toast = document.createElement('div');
-                toast.className = `${PREFIX}toast`;
-                toast.textContent = t('contact.form.success');
-                document.body.appendChild(toast);
-                setTimeout(() => toast.classList.add('show'), 10);
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                    setTimeout(() => toast.remove(), 300);
-                }, 3000);
-            }, 1500);
-        });
+        // Contact form - uses mailto action
 
         // Modal functionality
         document.querySelectorAll(`.${PREFIX}modal-trigger`).forEach(trigger => {
