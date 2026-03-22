@@ -1134,22 +1134,22 @@ function renderWebsite(containerId) {
                         <div class="${PREFIX}col-md-6">
                             <div class="${PREFIX}card ${PREFIX}border-0 ${PREFIX}shadow-sm ${PREFIX}h-100">
                                 <div class="${PREFIX}card-body">
-                                    <form id="${PREFIX}contactForm" action="mailto:info@ionicpatrimoine.com" method="POST" enctype="text/plain">
+                                    <form id="${PREFIX}contactForm">
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.prenom">Prénom</label>
-                                            <input type="text" class="${PREFIX}form-control" name="Prénom" required>
+                                            <input type="text" class="${PREFIX}form-control" id="${PREFIX}prenom" required>
                                         </div>
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.nom">Nom de famille</label>
-                                            <input type="text" class="${PREFIX}form-control" name="Nom" required>
+                                            <input type="text" class="${PREFIX}form-control" id="${PREFIX}nom" required>
                                         </div>
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.email">E-mail</label>
-                                            <input type="email" class="${PREFIX}form-control" name="Email" required>
+                                            <input type="email" class="${PREFIX}form-control" id="${PREFIX}email" required>
                                         </div>
                                         <div class="${PREFIX}mb-3">
                                             <label class="${PREFIX}form-label" data-${PREFIX}i18n="contact.form.message">Message</label>
-                                            <textarea class="${PREFIX}form-control" name="Message" rows="4" required></textarea>
+                                            <textarea class="${PREFIX}form-control" id="${PREFIX}message" rows="4" required></textarea>
                                         </div>
                                         <button type="submit" class="${PREFIX}btn ${PREFIX}btn-primary ${PREFIX}w-100" data-${PREFIX}i18n="contact.form.send">Envoyer</button>
                                     </form>

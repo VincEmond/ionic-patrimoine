@@ -315,6 +315,26 @@ $(document).ready(function() {
     });
 
     // Contact form uses mailto action
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const prenom = document.getElementById('prenom').value;
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = encodeURIComponent('Nouveau message - Ionic Patrimoine');
+            const body = encodeURIComponent(
+                'Prénom=' + prenom + '\r\n' +
+                'Nom=' + nom + '\r\n' +
+                'Email=' + email + '\r\n' +
+                'Message=' + message
+            );
+            
+            window.location.href = 'mailto:info@ionicpatrimoine.com?subject=' + subject + '&body=' + body;
+        });
+    }
 
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const sections = document.querySelectorAll('section');
@@ -344,15 +364,9 @@ $(document).ready(function() {
     }
 });
 
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
     style.textContent = `
-        body { opacity: 0; transition: opacity 0.3s ease; }
-        body.loaded { opacity: 1; }
         .toast-notification {
             position: fixed;
             bottom: 30px;
