@@ -20,7 +20,16 @@ const translations = {
             desc1: "Marc-Olivier Poulin est planificateur financier et fondateur de Ionic Patrimoine inc., un cabinet indépendant spécialisé dans l'accompagnement stratégique des familles, des professionnels et des entrepreneurs dans la gestion et structuration de leur patrimoine.",
             desc2: "Issu de l'Université Laval et de l'Institut de Planification Financière (CIFP), il a développé la rigueur analytique qui guide sa pratique professionnelle. Il a accompagné des centaines de clients dans les décisions financières les plus importantes de leur vie.",
             desc3: "Avant de fonder Ionic Patrimoine inc., il a évolué au sein de services spécialisés de grandes institutions financières canadiennes, développant une compréhension approfondie des enjeux financiers des clientèles exigeantes.",
-            affiliation: "En tant que professionnel affilié à MICA, j'ai accès à un réseau de haut niveau de spécialistes pour offrir à mes clients des solutions personnalisées et indépendantes."
+            affiliation: "En tant que professionnel affilié à MICA, j'ai accès à un réseau de haut niveau de spécialistes pour offrir à mes clients des solutions personnalisées et indépendantes.",
+            mica: {
+                title: "Un réseau de spécialistes",
+                desc: "En tant que professionnel affilié à MICA Capital, j'ai accès à un réseau de haut niveau de spécialistes pour offrir à mes clients des solutions personnalisées et indépendantes."
+            },
+            clientAccess: {
+                title: "Accès Client",
+                desc: "Accédez à votre espace client pour consulter vos documents et suivre l'évolution de votre patrimoine.",
+                btn: "Portail Client"
+            }
         },
         why: {
             title: "Pourquoi la colonne ionique grecque est-elle au cœur de notre image ?",
@@ -36,7 +45,8 @@ const translations = {
             confiance: {
                 title: "Confiance",
                 desc: "Bâtir, protéger et transmettre un patrimoine qui résister au temps. Nous sommes avec vous, pour vous, et pour les générations à venir."
-            }
+            },
+            closing: "Chez Ionic Patrimoine, nous bâtissons avec vous, pour vous, et pour les générations à venir."
         },
         mission: {
             title: "Notre Mission, Vision & Valeurs",
@@ -67,7 +77,8 @@ const translations = {
                 4: "Fonds alternatifs liquides",
                 5: "Fonds distincts & rentes viagères",
                 6: "Certificats de placement garanti",
-                footer: "Nous concevons des stratégies alignées sur vos objectifs, votre horizon et votre tolérance au risque."
+                footer: "Nous concevons des stratégies alignées sur vos objectifs, votre horizon et votre tolérance au risque.",
+                disclaimer: "Les recommandations de placement, y compris celles portant sur les fonds listés précédemment, sont effectuées par l'entremise de MICA Capital inc., cabinet de services financiers dûment inscrit auprès des autorités réglementaires."
             },
             plan: {
                 title: "Planification Financière",
@@ -136,8 +147,17 @@ const translations = {
             title: "About us",
             subtitle: "Financial Planner – Founder",
             desc1: "Marc-Olivier Poulin is a financial planner and founder of Ionic Patrimoine inc., an independent firm specializing in strategic guidance for families, professionals and entrepreneurs in managing and structuring their assets.",
-            desc2: "A graduate of Université Laval and the Financial Planning Institute (CIFP), he developed the analytical rigor that guides his professional practice. He has helped hundreds of clients with the most important financial decisions of their life.",
-            desc3: "Before founding Ionic Patrimoine inc., he worked within specialized services of major Canadian financial institutions, developing a thorough understanding of the financial challenges facing demanding clients."
+            desc2: "He pursued advanced studies in financial planning at Université Laval, the Institut de planification financière (InstitutPF), and the Canadian Institute of Financial Planning (CIFP).",
+            desc3: "Before founding Ionic Patrimoine inc., he worked within specialized services of major Canadian financial institutions, developing a thorough understanding of the financial challenges facing demanding clients.",
+            mica: {
+                title: "A network of specialists",
+                desc: "As a professional affiliated with MICA Capital, I have access to a high-level network of specialists to offer my clients personalized and independent solutions."
+            },
+            clientAccess: {
+                title: "Client Access",
+                desc: "Access your client space to view your documents and track the evolution of your assets.",
+                btn: "Client Portal"
+            }
         },
         why: {
             title: "Why is the Greek ionic column at the heart of our brand?",
@@ -153,7 +173,8 @@ const translations = {
             confiance: {
                 title: "Trust",
                 desc: "Building, protecting and transmitting assets that stand the test of time. We are with you, for you, and for generations to come."
-            }
+            },
+            closing: "At Ionic Patrimoine, we build with you, for you, and for generations to come."
         },
         mission: {
             title: "Our Mission, Vision & Values",
@@ -184,7 +205,8 @@ const translations = {
                 4: "Liquid alternative funds",
                 5: "Segregated funds & annuities",
                 6: "Guaranteed investment certificates",
-                footer: "We design strategies aligned with your objectives, your time horizon and your risk tolerance."
+                footer: "We design strategies aligned with your objectives, your time horizon and your risk tolerance.",
+                disclaimer: "Investment recommendations, including those for the funds listed above, are made through MICA Capital inc., a financial services firm duly registered with regulatory authorities."
             },
             plan: {
                 title: "Financial Planning",
@@ -253,26 +275,26 @@ function applyTranslations() {
     document.documentElement.lang = currentLang;
 }
 
-document.getElementById('langToggle').addEventListener('click', function() {
+document.getElementById('langToggle').addEventListener('click', function () {
     currentLang = currentLang === 'fr' ? 'en' : 'fr';
     localStorage.setItem('lang', currentLang);
     applyTranslations();
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     applyTranslations();
 
-    $('.navbar-nav .nav-link').on('click', function() {
+    $('.navbar-nav .nav-link').on('click', function () {
         $('.navbar-collapse').collapse('hide');
     });
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
             $('.navbar').addClass('scrolled');
         } else {
             $('.navbar').removeClass('scrolled');
         }
-        
+
         if ($(this).scrollTop() > 300) {
             $('#backToTop').addClass('show');
         } else {
@@ -280,12 +302,12 @@ $(document).ready(function() {
         }
     });
 
-    $('#backToTop').on('click', function() {
-        $('html, body').animate({ scrollTop: 0 }, 600);
+    $('#backToTop').on('click', function () {
+        $('html, body').animate({scrollTop: 0}, 600);
         return false;
     });
 
-    $('a[href^="#"]').on('click', function(event) {
+    $('a[href^="#"]').on('click', function (event) {
         const target = $(this.getAttribute('href'));
         if (target.length) {
             event.preventDefault();
@@ -301,15 +323,15 @@ $(document).ready(function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.card, section').forEach(function(el) {
+    document.querySelectorAll('.card, section').forEach(function (el) {
         el.classList.add('fade-in');
         observer.observe(el);
     });
@@ -317,13 +339,13 @@ $(document).ready(function() {
     // Contact form uses mailto action
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const prenom = document.getElementById('prenom').value;
             const nom = document.getElementById('nom').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
+
             const subject = encodeURIComponent('Nouveau message - Ionic Patrimoine');
             const body = encodeURIComponent(
                 'Prénom=' + prenom + '\r\n' +
@@ -331,27 +353,27 @@ $(document).ready(function() {
                 'Email=' + email + '\r\n' +
                 'Message=' + message
             );
-            
+
             window.location.href = 'mailto:info@ionicpatrimoine.com?subject=' + subject + '&body=' + body;
         });
     }
 
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const sections = document.querySelectorAll('section');
-    
-    $(window).on('scroll', function() {
+
+    $(window).on('scroll', function () {
         let current = '';
-        
-        sections.forEach(function(section) {
+
+        sections.forEach(function (section) {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            
+
             if ($(this).scrollTop() >= sectionTop - 150) {
                 current = section.getAttribute('id');
             }
         });
-        
-        navLinks.forEach(function(link) {
+
+        navLinks.forEach(function (link) {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
                 link.classList.add('active');
@@ -364,7 +386,7 @@ $(document).ready(function() {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const style = document.createElement('style');
     style.textContent = `
         .toast-notification {
