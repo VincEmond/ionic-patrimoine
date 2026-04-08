@@ -1,7 +1,7 @@
 :root {
     --primary-color: #0a263e;
     --secondary-color: #15436b;
-    --accent-color: #d4af37;
+    --accent-color: #A27412;
     --text-dark: #2c3e50;
     --text-light: #6c757d;
     --bg-light: #f8f9fa;
@@ -513,6 +513,15 @@ footer a:hover {
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--accent-color);
     outline-offset: 2px;
+}
+
+/* Gold text color */
+.text-gold {
+    color: #A27412 !important;
+}
+
+.bg-gold {
+    background-color: #A27412 !important;
 }
 
 /* Reduced motion */
