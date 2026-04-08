@@ -39,6 +39,13 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     background-color: #0a263e;
+    z-index: 1030;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 5px 0;
+    }
 }
 
 .navbar.scrolled {
@@ -51,6 +58,12 @@ h1, h2, h3, h4, h5, h6 {
     height: 80px;
     width: auto;
     filter: brightness(1.1) contrast(1.05);
+}
+
+@media (max-width: 991px) {
+    .navbar-brand img {
+        height: 60px;
+    }
 }
 
 .navbar-nav .nav-link {
@@ -103,6 +116,13 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 80px;
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        background-attachment: scroll;
+        padding-top: 100px;
+    }
 }
 
 .hero-section h1 {
@@ -522,6 +542,19 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 .bg-gold {
     background-color: #A27412 !important;
+}
+
+/* Dropdown menu gold arrows */
+.dropdown-item .bi-arrow-up-right-square {
+    color: #A27412;
+    margin-left: 5px;
+    font-size: 0.85em;
+}
+
+.dropdown-toggle .bi-arrow-up-right-square {
+    color: inherit;
+    margin-left: 5px;
+    font-size: 0.85em;
 }
 
 /* Reduced motion */

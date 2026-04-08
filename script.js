@@ -285,6 +285,8 @@ $(document).ready(function () {
     applyTranslations();
 
     $('.navbar-nav .nav-link').on('click', function () {
+        // Don't close navbar when clicking dropdown toggle
+        if ($(this).hasClass('dropdown-toggle')) return;
         $('.navbar-collapse').collapse('hide');
     });
 
@@ -308,7 +310,11 @@ $(document).ready(function () {
     });
 
     $('a[href^="#"]').on('click', function (event) {
-        const target = $(this.getAttribute('href'));
+        const href = $(this).attr('href');
+        // Skip if href is just "#" or empty (external links, modals, etc.)
+        if (!href || href === '#' || href === '#!') return;
+        
+        const target = $(href);
         if (target.length) {
             event.preventDefault();
             const targetOffset = target.offset().top - 70;
