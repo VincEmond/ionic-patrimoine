@@ -8,6 +8,9 @@ const translations = {
             contact: "Contactez-nous",
             book: "Rendez-vous"
         },
+        testimonials: {
+            title: "Témoignages de nos clients"
+        },
         hero: {
             title: "Votre équilibre. Votre avenir. Votre héritage.",
             subtitle: "Planification financière indépendante et stratégique pour familles, professionnels et entrepreneurs.",
@@ -69,6 +72,10 @@ const translations = {
         },
         services: {
             title: "Nos Services",
+testimonials: {
+                title: "Témoignages de nos clients",
+                stars: "5 étoiles sur 5"
+            },
             invest: {
                 title: "Épargne & Investissements",
                 1: "Fonds négociés en bourse",
@@ -137,6 +144,9 @@ const translations = {
             contact: "Contact",
             book: "Book Appointment"
         },
+        testimonials: {
+            title: "Client Testimonials"
+        },
         hero: {
             title: "Your balance. Your future. Your legacy.",
             subtitle: "Independent and strategic financial planning for families, professionals and entrepreneurs.",
@@ -197,6 +207,10 @@ const translations = {
         },
         services: {
             title: "Our Services",
+            testimonials: {
+                title: "Client Testimonials",
+                stars: "5 out of 5 stars"
+            },
             invest: {
                 title: "Savings & Investments",
                 1: "Exchange-traded funds",
@@ -413,4 +427,75 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     `;
     document.head.appendChild(style);
+
+    // Testimonials Carousel
+    const track = document.querySelector('.testimonial-track');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
+    let autoplayInterval = null;
+    const AUTOPLAY_DELAY = 5000;
+
+    function goToSlide(index) {
+        currentIndex = index;
+        if (track) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentIndex + 1) % 4;
+        goToSlide(nextIndex);
+    }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, AUTOPLAY_DELAY);
+    }
+
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    if (track && indicators.length) {
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+                resetAutoplay();
+            });
+        });
+
+        const prevBtn = document.querySelector('.arrow-prev');
+        const nextBtn = document.querySelector('.arrow-next');
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                const prevIndex = currentIndex === 0 ? 3 : currentIndex - 1;
+                goToSlide(prevIndex);
+                resetAutoplay();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const nextIndex = (currentIndex + 1) % 4;
+                goToSlide(nextIndex);
+                resetAutoplay();
+            });
+        }
+
+        startAutoplay();
+
+        const carousel = document.querySelector('.testimonial-carousel');
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+    }
 });
