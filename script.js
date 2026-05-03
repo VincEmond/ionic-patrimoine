@@ -431,6 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Testimonials Carousel
     const track = document.querySelector('.testimonial-track');
     const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = indicators.length;
     let currentIndex = 0;
     let autoplayInterval = null;
     const AUTOPLAY_DELAY = 5000;
@@ -446,11 +447,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function nextSlide() {
-        const nextIndex = (currentIndex + 1) % 4;
+        const nextIndex = (currentIndex + 1) % totalSlides;
         goToSlide(nextIndex);
     }
 
     function startAutoplay() {
+        if (isPaused) return;
         stopAutoplay();
         autoplayInterval = setInterval(nextSlide, AUTOPLAY_DELAY);
     }
@@ -463,8 +465,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetAutoplay() {
-        stopAutoplay();
-        startAutoplay();
+        if (!isPaused) {
+            stopAutoplay();
+            startAutoplay();
+        }
+    }
+
+    let isPaused = false;
+
+    const pauseBtn = document.querySelector('.testimonial-pause');
+    if (pauseBtn) {
+        pauseBtn.addEventListener('click', () => {
+            isPaused = !isPaused;
+            if (isPaused) {
+                stopAutoplay();
+                pauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+                pauseBtn.setAttribute('aria-label', 'Play');
+            } else {
+                startAutoplay();
+                pauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+                pauseBtn.setAttribute('aria-label', 'Pause');
+            }
+        });
     }
 
     if (track && indicators.length) {
@@ -480,13 +502,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (prevBtn && nextBtn) {
             prevBtn.addEventListener('click', () => {
-                const prevIndex = currentIndex === 0 ? 3 : currentIndex - 1;
+                const prevIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
                 goToSlide(prevIndex);
                 resetAutoplay();
             });
 
             nextBtn.addEventListener('click', () => {
-                const nextIndex = (currentIndex + 1) % 4;
+                const nextIndex = (currentIndex + 1) % totalSlides;
                 goToSlide(nextIndex);
                 resetAutoplay();
             });

@@ -551,6 +551,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 .testimonial-card {
     flex: 0 0 100%;
     padding: 0 20px;
+    display: flex;
 }
 
 .testimonial-content {
@@ -560,6 +561,10 @@ a:focus, button:focus, input:focus, textarea:focus {
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
     text-align: center;
     position: relative;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .testimonial-text {
@@ -630,7 +635,8 @@ a:focus, button:focus, input:focus, textarea:focus {
     margin-top: 25px;
 }
 
-.testimonial-arrow {
+.testimonial-arrow,
+.testimonial-pause {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -645,7 +651,8 @@ a:focus, button:focus, input:focus, textarea:focus {
     justify-content: center;
 }
 
-.testimonial-arrow:hover {
+.testimonial-arrow:hover,
+.testimonial-pause:hover {
     background: var(--primary-color);
     color: white;
     transform: scale(1.1);
