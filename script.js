@@ -47,7 +47,7 @@ const translations = {
             },
             confiance: {
                 title: "Confiance",
-                desc: "Bâtir, protéger et transmettre un patrimoine qui résister au temps. Nous sommes avec vous, pour vous, et pour les générations à venir."
+                desc: "Bâtir, protéger et transmettre un patrimoine qui résiste au temps. Nous sommes avec vous, pour vous, et pour les générations à venir."
             },
             closing: "Chez Ionic Patrimoine, nous bâtissons avec vous, pour vous, et pour les générations à venir."
         },
