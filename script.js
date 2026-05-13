@@ -21,7 +21,7 @@ const translations = {
             title: "À propos de nous",
             subtitle: "Planificateur financier – Fondateur",
             desc1: "Marc-Olivier Poulin est planificateur financier et fondateur de Ionic Patrimoine inc., un cabinet indépendant spécialisé dans l'accompagnement stratégique des familles, des professionnels et des entrepreneurs dans la gestion et structuration de leur patrimoine.",
-            desc2: "Issu de l'Université Laval et de l'Institut de Planification Financière (CIFP), il a développé la rigueur analytique qui guide sa pratique professionnelle. Il a accompagné des centaines de clients dans les décisions financières les plus importantes de leur vie.",
+            desc2: "Issu de l'Université Laval, de l'Institut de Planification Financière & The Canadian Institute of Financial Planning (CIFP), il a développé la rigueur analytique qui guide sa pratique professionnelle. Il a accompagné des centaines de clients dans les décisions financières les plus importantes de leur vie.",
             desc3: "Avant de fonder Ionic Patrimoine inc., il a évolué au sein de services spécialisés de grandes institutions financières canadiennes, développant une compréhension approfondie des enjeux financiers des clientèles exigeantes.",
             affiliation: "En tant que professionnel affilié à MICA, j'ai accès à un réseau de haut niveau de spécialistes pour offrir à mes clients des solutions personnalisées et indépendantes.",
             mica: {
